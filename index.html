@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portal VITVISOR</title>
+<title>Portal VITVISOR - AI Edition</title>
 <style>
   :root {
     --blue-dark: #0f172a; --blue-primary: #1e40af; --blue-light: #3b82f6;
@@ -264,11 +264,11 @@
         <button class="btn btn-primary" style="background: var(--blue-primary);" onclick="openNewFolderModal()"> Nueva Carpeta</button>
         <input type="text" class="search-box" id="searchBox" placeholder=" Buscar archivos..." oninput="filterFiles()">
         <select class="sort-select" id="sortSelect" onchange="filterFiles()">
-          <option value="date-desc">📅 Más recientes</option>
+          <option value="date-desc"> Más recientes</option>
           <option value="date-asc">📅 Más antiguos</option>
-          <option value="name-asc">🔤 Nombre A-Z</option>
+          <option value="name-asc"> Nombre A-Z</option>
           <option value="name-desc">🔤 Nombre Z-A</option>
-          <option value="size-desc">📦 Mayor tamaño</option>
+          <option value="size-desc"> Mayor tamaño</option>
         </select>
       </div>
       <div id="filesContainer">
@@ -416,9 +416,8 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
 
-// ⚠️ IMPORTANTE: Reemplaza esto con tu API Key de OpenAI
-// Obtén una gratis en https://platform.openai.com/api-keys
-const OPENAI_API_KEY = 'sk-tu-api-key-aqui'; 
+// ⚠️ TU API KEY INTEGRADA AQUÍ
+const OPENAI_API_KEY = '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'; 
 
 let currentUser = null;
 let chatUnsubscribe = null;
@@ -824,7 +823,7 @@ async function deleteItem(itemId, type) {
     }
 
     await db.collection('users').doc(currentUser.uid).collection('items').doc(itemId).delete();
-    showToast(`${type === 'carpeta' ? '📁 Carpeta' : '📄 Archivo'} eliminado`, "success");
+    showToast(`${type === 'carpeta' ? ' Carpeta' : '📄 Archivo'} eliminado`, "success");
   } catch (error) {
     showToast("Error al eliminar: " + error.message, "error");
   }
@@ -909,9 +908,9 @@ function getFileIcon(filename) {
     'doc': '📝', 'docx': '📝', 'odt': '',
     'xls': '📊', 'xlsx': '', 'csv': '', 'ods': '',
     'ppt': '📽️', 'pptx': '📽️',
-    'zip': '️', 'rar': '️', '7z': '️', 'tar': '🗜️', 'gz': '🗜️',
+    'zip': '️', 'rar': '️', '7z': '️', 'tar': '️', 'gz': '🗜️',
     'mp3': '🎵', 'wav': '', 'ogg': '', 'flac': '🎵',
-    'txt': '📃', 'md': '',
+    'txt': '', 'md': '',
     'html': '', 'css': '🎨', 'js': '⚙️', 'py': '', 'java': '☕'
   };
   return icons[ext] || '';
