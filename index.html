@@ -355,16 +355,16 @@
     <!-- LOGO QUE LLEVA A INICIO -->
     <div class="sidebar-logo" onclick="showView('home', null)">VIT<span>VISOR</span></div>
     
-    <div class="nav-item active" onclick="showView('drive', this)"> VITDrive</div>
+    <div class="nav-item active" onclick="showView('drive', this)">📁 VITDrive</div>
     <div class="nav-item" onclick="showView('chat', this)">💬 Chats <span class="nav-badge hidden" id="chatBadge">0</span></div>
     <div class="nav-item" onclick="showView('ai', this)">✨ IA Vitvisor Ultimate</div>
-    <div class="nav-item" onclick="showView('tools', this)">️ Herramientas</div>
+    <div class="nav-item" onclick="showView('tools', this)">🛠️ Herramientas</div>
     <div class="nav-item" onclick="showView('docs', this)">📄 Documentos</div>
     <div class="nav-item" onclick="showView('code', this)">💻 Código</div>
     <!-- NUEVA PESTAÑA ARCADE -->
     <div class="nav-item" onclick="showView('arcade', this)">🕹️ Arcade</div>
     
-    <div class="nav-item" onclick="showView('password', this)">🔒 Cambiar Contraseña</div>
+    <div class="nav-item" onclick="showView('password', this)"> Cambiar Contraseña</div>
     <div class="user-profile">
       <div class="user-avatar" id="userAvatar">U</div>
       <div class="user-info">
@@ -393,7 +393,7 @@
             <div class="feature-desc">Almacenamiento en la nube seguro. Sube, organiza y comparte archivos de cualquier tipo con tu equipo.</div>
           </div>
           <div class="feature-card">
-            <div class="feature-icon"></div>
+            <div class="feature-icon">💬</div>
             <div class="feature-title">Chats Internos</div>
             <div class="feature-desc">Comunicación instantánea entre empleados. Historial persistente y notificaciones en tiempo real.</div>
           </div>
@@ -458,7 +458,7 @@
 
     <!-- IA ULTIMATE VIEW -->
     <div id="view-ai" class="hidden">
-      <div class="page-header"><h2>IA Vitvisor Ultimate </h2><p>Ultimate Edition · Powered by OpenRouter + Whisper Web</p></div>
+      <div class="page-header"><h2>IA Vitvisor Ultimate ✨</h2><p>Ultimate Edition · Powered by OpenRouter + Whisper Web</p></div>
       <div class="ai-ultimate-wrapper">
         <div class="ai-history-sidebar">
           <div class="ai-history-header">
@@ -496,7 +496,7 @@
           <div class="ai-input-wrapper">
             <div id="aiAttachmentArea" style="margin-bottom: 8px;"></div>
             <div class="ai-input-box">
-              <button class="ai-action-small-btn" style="padding: 8px;" onclick="document.getElementById('aiFileInput').click()" title="Adjuntar archivo"></button>
+              <button class="ai-action-small-btn" style="padding: 8px;" onclick="document.getElementById('aiFileInput').click()" title="Adjuntar archivo">📎</button>
               <input type="file" id="aiFileInput" style="display: none;" onchange="handleAiFileAttach(this)" accept=".txt,.pdf,.doc,.docx,.csv,.json,.md,.html,.js,.css,.py">
               <textarea class="ai-textarea" id="aiUltimateInput" placeholder="Escribe un mensaje o describe una imagen..." rows="1" oninput="autoResizeTextarea(this)" onkeydown="handleAiKeydown(event)"></textarea>
               <button class="ai-send-btn" id="aiSendBtn" onclick="sendAiUltimateMessage()"></button>
@@ -514,7 +514,7 @@
         
         <!-- TRANSCRIPTOR DE AUDIO GRATIS -->
         <div class="tool-card">
-          <h3 style="margin-bottom: 20px; color: var(--blue-dark); display:flex; align-items:center; gap:10px;">️ Transcriptor de Audio (Whisper Web)</h3>
+          <h3 style="margin-bottom: 20px; color: var(--blue-dark); display:flex; align-items:center; gap:10px;">🎙️ Transcriptor de Audio (Whisper Web)</h3>
           <p style="color:var(--text-light); margin-bottom:15px; font-size:14px;">Transcribe audios localmente. <strong>100% Gratis y Privado.</strong></p>
           <div class="converter-dropzone" id="audioDropzone" onclick="document.getElementById('whisperInput').click()">
             <div style="font-size: 40px; margin-bottom: 10px;">🎧</div>
@@ -541,7 +541,7 @@
               <textarea id="sourceText" class="translator-textarea" placeholder="Texto original..."></textarea>
             </div>
             <div style="display:flex; align-items:center; justify-content:center;">
-              <button class="btn btn-primary" style="width:auto; border-radius:50%; padding:12px;" onclick="translateText()">➤</button>
+              <button class="btn btn-primary" style="width:auto; border-radius:50%; padding:12px;" onclick="translateText()"></button>
             </div>
             <div class="translator-col">
               <select id="targetLang" class="sort-select" style="width:100%">
@@ -601,7 +601,7 @@
             <div class="doc-desc">Crear archivo .doc compatible</div>
           </div>
           <div class="doc-type-card excel" onclick="openEditor('excel')">
-            <div class="doc-icon">📗</div>
+            <div class="doc-icon"></div>
             <div class="doc-title">Hoja de Cálculo</div>
             <div class="doc-desc">Crear archivo .csv (Excel)</div>
           </div>
@@ -649,9 +649,9 @@
       </div>
     </div>
 
-    <!-- NUEVA VISTA: ARCADE CON SISTEMA DE GUARDADO (SOLO RETRO) -->
+    <!-- NUEVA VISTA: ARCADE CON SISTEMA DE GUARDADO (RETRO + NDS) -->
     <div id="view-arcade" class="hidden">
-      <div class="page-header"><h2>🕹️ Zona Arcade Retro</h2><p>Tómate un descanso. Tus partidas se guardan automáticamente.</p></div>
+      <div class="page-header"><h2>️ Zona Arcade Retro</h2><p>Tómate un descanso. Tus partidas se guardan automáticamente.</p></div>
       <div class="arcade-container">
         <div class="emulator-wrapper" id="emulator-container">
           <!-- EmulatorJS se cargará aquí -->
@@ -665,13 +665,14 @@
           <div class="console-selector">
             <label for="consoleSelect" style="font-weight:600; color:var(--blue-dark);">Sistema:</label>
             <select id="consoleSelect" onchange="updateConsoleCore()">
-              <option value="auto">🔍 Auto-detectar</option>
+              <option value="auto"> Auto-detectar</option>
               <option value="nes">Nintendo (NES)</option>
               <option value="snes">Super Nintendo (SNES)</option>
               <option value="gba">Game Boy Advance</option>
               <option value="gb">Game Boy / Color</option>
               <option value="segaMD">Sega Genesis / Mega Drive</option>
               <option value="n64">Nintendo 64</option>
+              <option value="nds">Nintendo DS 🎮</option>
               <option value="arcade">Arcade (MAME/FBA)</option>
               <option value="atari2600">Atari 2600</option>
               <option value="neogeo">Neo Geo</option>
@@ -681,19 +682,19 @@
           <div class="rom-upload-area">
             <label class="rom-upload-label">
                Cargar ROM Retro
-              <input type="file" id="romInput" style="display:none" accept=".nes,.sfc,.smc,.gba,.gb,.gbc,.gen,.md,.bin,.n64,.z64,.zip,.a26,.neo" onchange="loadRom(this)">
+              <input type="file" id="romInput" style="display:none" accept=".nes,.sfc,.smc,.gba,.gb,.gbc,.gen,.md,.bin,.n64,.z64,.nds,.zip,.a26,.neo" onchange="loadRom(this)">
             </label>
           </div>
           
           <!-- CONTROLES DE GUARDADO -->
           <div class="save-controls">
             <button class="save-btn primary" onclick="manualSaveState()">💾 Guardar Partida</button>
-            <button class="save-btn" onclick="manualLoadState()"> Cargar Última</button>
+            <button class="save-btn" onclick="manualLoadState()">⏳ Cargar Última</button>
             <button class="save-btn danger" onclick="deleteSaveState()">🗑️ Borrar Guardado</button>
           </div>
           
           <div class="arcade-note">
-            ⚠️ Nota: Solo se soportan consolas retro (hasta N64/Arcade). 
+            ️ Nota: Soporta NES, SNES, GBA, Genesis, N64, NDS, Arcade y Atari. 
             Las partidas se guardan automáticamente al pausar. 
             Asegúrate de tener derechos legales sobre las ROMs que uses.
           </div>
@@ -708,9 +709,9 @@
         <h3>Nueva contraseña</h3>
         <form id="passwordForm" onsubmit="handleChangePassword(event)">
           <div class="form-group"><label>Contraseña actual</label><div class="password-field"><input type="password" id="currentPassword" required placeholder="Introduce tu contraseña actual"><button type="button" class="eye-toggle" onclick="togglePassword('currentPassword', this)">👁️</button></div></div>
-          <div class="form-group"><label>Nueva contraseña</label><div class="password-field"><input type="password" id="newPassword" required placeholder="Introduce la nueva contraseña" oninput="checkPasswordStrength()"><button type="button" class="eye-toggle" onclick="togglePassword('newPassword', this)">👁️</button></div><div class="password-strength" id="passwordStrength"></div></div>
-          <div class="form-group"><label>Confirmar nueva contraseña</label><div class="password-field"><input type="password" id="confirmPassword" required placeholder="Repite la nueva contraseña" oninput="checkPasswordMatch()"><button type="button" class="eye-toggle" onclick="togglePassword('confirmPassword', this)">👁️</button></div><div class="password-strength" id="passwordMatch"></div></div>
-          <div class="password-requirements"><strong>Requisitos de la contraseña:</strong><ul><li id="req-length">❌ Mínimo 8 caracteres</li><li id="req-upper">❌ Al menos una mayúscula</li><li id="req-lower">❌ Al menos una minúscula</li><li id="req-number"> Al menos un número</li><li id="req-special">❌ Al menos un carácter especial (!@#$%^&*)</li></ul></div>
+          <div class="form-group"><label>Nueva contraseña</label><div class="password-field"><input type="password" id="newPassword" required placeholder="Introduce la nueva contraseña" oninput="checkPasswordStrength()"><button type="button" class="eye-toggle" onclick="togglePassword('newPassword', this)">️</button></div><div class="password-strength" id="passwordStrength"></div></div>
+          <div class="form-group"><label>Confirmar nueva contraseña</label><div class="password-field"><input type="password" id="confirmPassword" required placeholder="Repite la nueva contraseña" oninput="checkPasswordMatch()"><button type="button" class="eye-toggle" onclick="togglePassword('confirmPassword', this)">️</button></div><div class="password-strength" id="passwordMatch"></div></div>
+          <div class="password-requirements"><strong>Requisitos de la contraseña:</strong><ul><li id="req-length">❌ Mínimo 8 caracteres</li><li id="req-upper">❌ Al menos una mayúscula</li><li id="req-lower">❌ Al menos una minúscula</li><li id="req-number">❌ Al menos un número</li><li id="req-special">❌ Al menos un carácter especial (!@#$%^&*)</li></ul></div>
           <button type="submit" class="btn btn-primary" id="changePassBtn" style="margin-top: 20px;">🔐 Cambiar Contraseña</button>
         </form>
       </div>
@@ -785,25 +786,25 @@ function showView(view, navElement) {
 function showToast(msg, type = 'success') { const toast = document.createElement('div'); toast.className = `toast ${type}`; toast.textContent = msg; document.body.appendChild(toast); setTimeout(() => toast.remove(), 4000); }
 
 // PASSWORD LOGIC
-function togglePassword(fieldId, btn) { const field = document.getElementById(fieldId); if (field.type === 'password') { field.type = 'text'; btn.textContent = ''; } else { field.type = 'password'; btn.textContent = '️'; } }
-function checkPasswordStrength() { const password = document.getElementById('newPassword').value; const strengthEl = document.getElementById('passwordStrength'); let score = 0; if (password.length >= 8) score++; if (/[A-Z]/.test(password)) score++; if (/[a-z]/.test(password)) score++; if (/[0-9]/.test(password)) score++; if (/[^A-Za-z0-9]/.test(password)) score++; if (password.length === 0) { strengthEl.textContent = ''; strengthEl.className = 'password-strength'; } else if (score <= 2) { strengthEl.textContent = ' Débil'; strengthEl.className = 'password-strength strength-weak'; } else if (score <= 4) { strengthEl.textContent = '🟡 Media'; strengthEl.className = 'password-strength strength-medium'; } else { strengthEl.textContent = ' Fuerte'; strengthEl.className = 'password-strength strength-strong'; } updateRequirement('req-length', password.length >= 8); updateRequirement('req-upper', /[A-Z]/.test(password)); updateRequirement('req-lower', /[a-z]/.test(password)); updateRequirement('req-number', /[0-9]/.test(password)); updateRequirement('req-special', /[^A-Za-z0-9]/.test(password)); checkPasswordMatch(); }
-function updateRequirement(id, valid) { const el = document.getElementById(id); if (valid) { el.textContent = el.textContent.replace('❌', '✅'); el.classList.add('valid'); el.classList.remove('invalid'); } else { el.textContent = el.textContent.replace('✅', ''); el.classList.remove('valid'); el.classList.add('invalid'); } }
+function togglePassword(fieldId, btn) { const field = document.getElementById(fieldId); if (field.type === 'password') { field.type = 'text'; btn.textContent = ''; } else { field.type = 'password'; btn.textContent = '👁️'; } }
+function checkPasswordStrength() { const password = document.getElementById('newPassword').value; const strengthEl = document.getElementById('passwordStrength'); let score = 0; if (password.length >= 8) score++; if (/[A-Z]/.test(password)) score++; if (/[a-z]/.test(password)) score++; if (/[0-9]/.test(password)) score++; if (/[^A-Za-z0-9]/.test(password)) score++; if (password.length === 0) { strengthEl.textContent = ''; strengthEl.className = 'password-strength'; } else if (score <= 2) { strengthEl.textContent = '🔴 Débil'; strengthEl.className = 'password-strength strength-weak'; } else if (score <= 4) { strengthEl.textContent = '🟡 Media'; strengthEl.className = 'password-strength strength-medium'; } else { strengthEl.textContent = '🟢 Fuerte'; strengthEl.className = 'password-strength strength-strong'; } updateRequirement('req-length', password.length >= 8); updateRequirement('req-upper', /[A-Z]/.test(password)); updateRequirement('req-lower', /[a-z]/.test(password)); updateRequirement('req-number', /[0-9]/.test(password)); updateRequirement('req-special', /[^A-Za-z0-9]/.test(password)); checkPasswordMatch(); }
+function updateRequirement(id, valid) { const el = document.getElementById(id); if (valid) { el.textContent = el.textContent.replace('', '✅'); el.classList.add('valid'); el.classList.remove('invalid'); } else { el.textContent = el.textContent.replace('✅', ''); el.classList.remove('valid'); el.classList.add('invalid'); } }
 function checkPasswordMatch() { const newPass = document.getElementById('newPassword').value; const confirmPass = document.getElementById('confirmPassword').value; const matchEl = document.getElementById('passwordMatch'); if (confirmPass.length === 0) { matchEl.textContent = ''; return; } if (newPass === confirmPass) { matchEl.textContent = '✅ Las contraseñas coinciden'; matchEl.className = 'password-strength strength-strong'; } else { matchEl.textContent = '❌ Las contraseñas no coinciden'; matchEl.className = 'password-strength strength-weak'; } }
 async function handleChangePassword(e) { e.preventDefault(); const currentPassword = document.getElementById('currentPassword').value; const newPassword = document.getElementById('newPassword').value; const confirmPassword = document.getElementById('confirmPassword').value; const btn = document.getElementById('changePassBtn'); if (newPassword !== confirmPassword) { showToast("Las contraseñas nuevas no coinciden", "error"); return; } if (newPassword.length < 8) { showToast("La contraseña debe tener al menos 8 caracteres", "error"); return; } if (newPassword === currentPassword) { showToast("La nueva contraseña no puede ser igual a la actual", "error"); return; } btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> Cambiando...'; try { const credential = firebase.auth.EmailAuthProvider.credential(currentUser.email, currentPassword); await currentUser.reauthenticateWithCredential(credential); await currentUser.updatePassword(newPassword); showToast("✅ Contraseña cambiada correctamente", "success"); document.getElementById('passwordForm').reset(); document.getElementById('passwordStrength').textContent = ''; document.getElementById('passwordMatch').textContent = ''; ['req-length', 'req-upper', 'req-lower', 'req-number', 'req-special'].forEach(id => { const el = document.getElementById(id); el.textContent = el.textContent.replace('✅', ''); el.classList.remove('valid'); el.classList.add('invalid'); }); } catch (error) { if (error.code === 'auth/wrong-password') showToast("La contraseña actual es incorrecta", "error"); else if (error.code === 'auth/weak-password') showToast("La contraseña es demasiado débil", "error"); else if (error.code === 'auth/requires-recent-login') showToast("Por seguridad, cierra sesión y vuelve a iniciar", "error"); else showToast("Error: " + error.message, "error"); } finally { btn.disabled = false; btn.innerHTML = '🔐 Cambiar Contraseña'; } }
 
 // VITDRIVE LOGIC
 function loadItems() { if (filesUnsubscribe) filesUnsubscribe(); const container = document.getElementById('filesContainer'); container.innerHTML = '<p style="text-align:center;color:var(--text-light);padding:40px;">Cargando...</p>'; filesUnsubscribe = db.collection('users').doc(currentUser.uid).collection('items').onSnapshot(snapshot => { allItems = []; snapshot.forEach(doc => allItems.push({ id: doc.id, ...doc.data() })); renderBreadcrumb(); filterFiles(); }, error => container.innerHTML = `<p style="text-align:center;color:var(--error);">Error: ${error.message}</p>`); }
 function getCurrentFolderItems() { return allItems.filter(item => (item.parentFolderId || null) === currentFolderId); }
-function renderBreadcrumb() { const bc = document.getElementById('breadcrumb'); let html = `<span class="breadcrumb-item ${currentPath.length === 0 ? 'active' : ''}" onclick="navigateTo(null)">🏠 Inicio</span>`; currentPath.forEach((folder, idx) => { html += `<span class="breadcrumb-sep">›</span><span class="breadcrumb-item ${idx === currentPath.length - 1 ? 'active' : ''}" onclick="navigateToFolder('${folder.id}', ${idx})">${folder.name}</span>`; }); bc.innerHTML = html; }
+function renderBreadcrumb() { const bc = document.getElementById('breadcrumb'); let html = `<span class="breadcrumb-item ${currentPath.length === 0 ? 'active' : ''}" onclick="navigateTo(null)"> Inicio</span>`; currentPath.forEach((folder, idx) => { html += `<span class="breadcrumb-sep">›</span><span class="breadcrumb-item ${idx === currentPath.length - 1 ? 'active' : ''}" onclick="navigateToFolder('${folder.id}', ${idx})">${folder.name}</span>`; }); bc.innerHTML = html; }
 function navigateTo(folderId) { currentFolderId = folderId; currentPath = folderId === null ? [] : buildPath(folderId); renderBreadcrumb(); filterFiles(); }
 function buildPath(folderId) { const stack = []; let current = folderId; while (current) { const folder = allItems.find(i => i.id === current); if (!folder) break; stack.unshift({ id: folder.id, name: folder.name }); current = folder.parentFolderId || null; } return stack; }
 function navigateToFolder(folderId, pathIndex) { currentPath = buildPath(folderId); currentFolderId = folderId; renderBreadcrumb(); filterFiles(); }
-function filterFiles() { const search = document.getElementById('searchBox').value.toLowerCase(); const sort = document.getElementById('sortSelect').value; const container = document.getElementById('filesContainer'); let items = getCurrentFolderItems(); if (search) items = items.filter(i => i.name.toLowerCase().includes(search)); const folders = items.filter(i => i.type === 'folder'); const files = items.filter(i => i.type === 'file'); const sortFn = (a, b) => { if (sort === 'name-asc') return a.name.localeCompare(b.name); if (sort === 'name-desc') return b.name.localeCompare(a.name); if (sort === 'date-desc') return (b.uploadedAt?.toMillis?.() || 0) - (a.uploadedAt?.toMillis?.() || 0); if (sort === 'date-asc') return (a.uploadedAt?.toMillis?.() || 0) - (b.uploadedAt?.toMillis?.() || 0); if (sort === 'size-desc') return (b.sizeBytes || 0) - (a.sizeBytes || 0); return 0; }; folders.sort(sortFn); files.sort(sortFn); const sorted = [...folders, ...files]; if (sorted.length === 0) { container.innerHTML = `<p style="text-align:center;color:var(--text-light);padding:40px;">${search ? 'No se encontraron resultados' : 'Carpeta vacía. ¡Sube tu primer archivo!'}</p>`; return; } container.innerHTML = '<div class="file-grid">' + sorted.map(item => { if (item.type === 'folder') { return `<div class="file-card folder" ondblclick="openFolder('${item.id}')"><div class="file-actions"><button class="file-action-btn" onclick="event.stopPropagation(); deleteItem('${item.id}', 'carpeta')" title="Eliminar">️</button></div><div class="file-icon">📁</div><div class="file-name">${item.name}</div><div class="file-meta">Carpeta</div></div>`; } else { return `<div class="file-card"><div class="file-actions"><button class="file-action-btn download" onclick="event.stopPropagation(); window.open('${item.url}', '_blank')" title="Descargar">⬇️</button><button class="file-action-btn" onclick="event.stopPropagation(); deleteItem('${item.id}', 'archivo')" title="Eliminar">🗑️</button></div><div class="file-icon">${item.icon || ''}</div><div class="file-name" title="${item.name}">${item.name}</div><div class="file-meta">${item.size} · ${item.date}</div><a href="${item.url}" target="_blank" class="file-link">⬇️ Descargar / Ver</a></div>`; } }).join('') + '</div>'; }
+function filterFiles() { const search = document.getElementById('searchBox').value.toLowerCase(); const sort = document.getElementById('sortSelect').value; const container = document.getElementById('filesContainer'); let items = getCurrentFolderItems(); if (search) items = items.filter(i => i.name.toLowerCase().includes(search)); const folders = items.filter(i => i.type === 'folder'); const files = items.filter(i => i.type === 'file'); const sortFn = (a, b) => { if (sort === 'name-asc') return a.name.localeCompare(b.name); if (sort === 'name-desc') return b.name.localeCompare(a.name); if (sort === 'date-desc') return (b.uploadedAt?.toMillis?.() || 0) - (a.uploadedAt?.toMillis?.() || 0); if (sort === 'date-asc') return (a.uploadedAt?.toMillis?.() || 0) - (b.uploadedAt?.toMillis?.() || 0); if (sort === 'size-desc') return (b.sizeBytes || 0) - (a.sizeBytes || 0); return 0; }; folders.sort(sortFn); files.sort(sortFn); const sorted = [...folders, ...files]; if (sorted.length === 0) { container.innerHTML = `<p style="text-align:center;color:var(--text-light);padding:40px;">${search ? 'No se encontraron resultados' : 'Carpeta vacía. ¡Sube tu primer archivo!'}</p>`; return; } container.innerHTML = '<div class="file-grid">' + sorted.map(item => { if (item.type === 'folder') { return `<div class="file-card folder" ondblclick="openFolder('${item.id}')"><div class="file-actions"><button class="file-action-btn" onclick="event.stopPropagation(); deleteItem('${item.id}', 'carpeta')" title="Eliminar">🗑️</button></div><div class="file-icon">📁</div><div class="file-name">${item.name}</div><div class="file-meta">Carpeta</div></div>`; } else { return `<div class="file-card"><div class="file-actions"><button class="file-action-btn download" onclick="event.stopPropagation(); window.open('${item.url}', '_blank')" title="Descargar">⬇️</button><button class="file-action-btn" onclick="event.stopPropagation(); deleteItem('${item.id}', 'archivo')" title="Eliminar">🗑️</button></div><div class="file-icon">${item.icon || ''}</div><div class="file-name" title="${item.name}">${item.name}</div><div class="file-meta">${item.size} · ${item.date}</div><a href="${item.url}" target="_blank" class="file-link">⬇️ Descargar / Ver</a></div>`; } }).join('') + '</div>'; }
 function openFolder(folderId) { currentFolderId = folderId; currentPath = buildPath(folderId); renderBreadcrumb(); filterFiles(); }
 function openNewFolderModal() { document.getElementById('folderNameInput').value = ''; document.getElementById('folderModal').classList.add('active'); setTimeout(() => document.getElementById('folderNameInput').focus(), 100); }
 function closeFolderModal() { document.getElementById('folderModal').classList.remove('active'); }
 async function createFolder() { const name = document.getElementById('folderNameInput').value.trim(); if (!name) { showToast("Escribe un nombre", "error"); return; } try { await db.collection('users').doc(currentUser.uid).collection('items').add({ type: 'folder', name: name, parentFolderId: currentFolderId, createdAt: firebase.firestore.FieldValue.serverTimestamp() }); closeFolderModal(); showToast(`📁 Carpeta "${name}" creada`, "success"); } catch (error) { showToast("Error al crear carpeta: " + error.message, "error"); } }
-async function deleteItem(itemId, type) { if (!confirm(`¿Seguro que quieres eliminar esta ${type}?`)) return; try { if (type === 'carpeta') { const children = await db.collection('users').doc(currentUser.uid).collection('items').where('parentFolderId', '==', itemId).get(); const batch = db.batch(); children.forEach(doc => batch.delete(doc.ref)); await batch.commit(); } await db.collection('users').doc(currentUser.uid).collection('items').doc(itemId).delete(); showToast(`${type === 'carpeta' ? ' Carpeta' : ' Archivo'} eliminado`, "success"); } catch (error) { showToast("Error al eliminar: " + error.message, "error"); } }
+async function deleteItem(itemId, type) { if (!confirm(`¿Seguro que quieres eliminar esta ${type}?`)) return; try { if (type === 'carpeta') { const children = await db.collection('users').doc(currentUser.uid).collection('items').where('parentFolderId', '==', itemId).get(); const batch = db.batch(); children.forEach(doc => batch.delete(doc.ref)); await batch.commit(); } await db.collection('users').doc(currentUser.uid).collection('items').doc(itemId).delete(); showToast(`${type === 'carpeta' ? '📁 Carpeta' : '📄 Archivo'} eliminado`, "success"); } catch (error) { showToast("Error al eliminar: " + error.message, "error"); } }
 
 async function handleFileUpload(input) {
   const file = input.files[0]; if (!file) return;
@@ -834,15 +835,15 @@ async function handleFileUpload(input) {
 function formatFileSize(bytes) { if (bytes < 1024) return bytes + ' B'; if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB'; return (bytes / (1024 * 1024)).toFixed(2) + ' MB'; }
 function getFileIcon(filename) {
   const ext = filename.split('.').pop().toLowerCase();
-  const icons = { 'jpg':'🖼️','jpeg':'🖼️','png':'️','gif':'️','webp':'🖼️','svg':'🖼️','mp4':'🎬','mov':'🎬','avi':'🎬','mkv':'','webm':'','pdf':'📄','doc':'📝','docx':'📝','odt':'','xls':'📊','xlsx':'','csv':'📊','ods':'','ppt':'📽️','pptx':'📽️','zip':'🗜️','rar':'️','7z':'️','tar':'🗜️','gz':'🗜️','mp3':'','wav':'🎵','ogg':'','flac':'🎵','txt':'📃','md':'📃','html':'🌐','css':'🎨','js':'⚙️','py':'🐍','java':'☕' };
-  return icons[ext] || '📄';
+  const icons = { 'jpg':'🖼️','jpeg':'🖼️','png':'️','gif':'🖼️','webp':'🖼️','svg':'🖼️','mp4':'🎬','mov':'','avi':'🎬','mkv':'','webm':'🎬','pdf':'📄','doc':'📝','docx':'📝','odt':'📝','xls':'📊','xlsx':'📊','csv':'📊','ods':'📊','ppt':'📽️','pptx':'️','zip':'🗜️','rar':'🗜️','7z':'🗜️','tar':'🗜️','gz':'️','mp3':'🎵','wav':'🎵','ogg':'🎵','flac':'🎵','txt':'📃','md':'📃','html':'🌐','css':'🎨','js':'⚙️','py':'🐍','java':'☕' };
+  return icons[ext] || '';
 }
 
 // CHAT LOGIC
 function loadChats() { if (chatUnsubscribe) chatUnsubscribe(); chatUnsubscribe = db.collection('chats').onSnapshot(snapshot => { allChats = []; unreadCount = 0; snapshot.forEach(doc => { const chat = { id: doc.id, ...doc.data() }; const isParticipant = chat.participants && chat.participants.some(p => p.uid === currentUser.uid); if (isParticipant) { allChats.push(chat); if (chat.lastMessageBy !== currentUser.uid && !chat.lastMessageRead) unreadCount++; } }); allChats.sort((a, b) => (b.lastMessageAt?.toMillis?.() || 0) - (a.lastMessageAt?.toMillis?.() || 0)); updateChatBadge(); renderChatList(); if (currentChatId) openChat(currentChatId); }, error => console.error("Error cargando chats:", error)); }
 function updateChatBadge() { const badge = document.getElementById('chatBadge'); if (unreadCount > 0) { badge.textContent = unreadCount; badge.classList.remove('hidden'); } else { badge.classList.add('hidden'); } }
 function renderChatList() { const chatList = document.getElementById('chatList'); if (allChats.length === 0) { chatList.innerHTML = '<div style="padding: 20px; text-align: center; color: var(--text-light);">No hay conversaciones</div>'; return; } chatList.innerHTML = allChats.map(chat => { const otherUser = chat.participants.find(p => p.uid !== currentUser.uid); const isActive = currentChatId === chat.id; const isUnread = chat.lastMessageBy !== currentUser.uid && !chat.lastMessageRead; const time = chat.lastMessageAt ? chat.lastMessageAt.toDate().toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'}) : ''; return `<div class="chat-item ${isActive ? 'active' : ''}" onclick="openChat('${chat.id}')"><div class="chat-avatar">${otherUser ? otherUser.name.substring(0, 2).toUpperCase() : '?'}</div><div class="chat-info"><div class="chat-name">${otherUser ? otherUser.name : 'Usuario desconocido'}</div><div class="chat-preview">${chat.lastMessage || 'Sin mensajes'}</div></div><div class="chat-meta"><div class="chat-time">${time}</div>${isUnread ? '<div class="unread-badge">1</div>' : ''}</div></div>`; }).join(''); }
-async function openChat(chatId) { currentChatId = chatId; renderChatList(); const chat = allChats.find(c => c.id === chatId); if (!chat) return; const otherUser = chat.participants.find(p => p.uid !== currentUser.uid); const chatMain = document.getElementById('chatMain'); chatMain.innerHTML = `<div class="chat-header"><div class="chat-header-avatar">${otherUser ? otherUser.name.substring(0, 2).toUpperCase() : '?'}</div><div class="chat-header-info"><div class="chat-header-name">${otherUser ? otherUser.name : 'Usuario'}</div><div class="chat-header-status"><div class="status-dot"></div> ${otherUser ? otherUser.email : ''}</div></div></div><div class="chat-messages" id="chatMessages"></div><form class="chat-input-area" onsubmit="sendChatMessage(event)"><input type="text" class="chat-input" id="chatInput" placeholder="Escribe un mensaje..." required><button type="submit" class="btn-send"></button></form>`; await db.collection('chats').doc(chatId).update({ lastMessageRead: true }); updateChatBadge(); loadChatMessages(chatId); }
+async function openChat(chatId) { currentChatId = chatId; renderChatList(); const chat = allChats.find(c => c.id === chatId); if (!chat) return; const otherUser = chat.participants.find(p => p.uid !== currentUser.uid); const chatMain = document.getElementById('chatMain'); chatMain.innerHTML = `<div class="chat-header"><div class="chat-header-avatar">${otherUser ? otherUser.name.substring(0, 2).toUpperCase() : '?'}</div><div class="chat-header-info"><div class="chat-header-name">${otherUser ? otherUser.name : 'Usuario'}</div><div class="chat-header-status"><div class="status-dot"></div> ${otherUser ? otherUser.email : ''}</div></div></div><div class="chat-messages" id="chatMessages"></div><form class="chat-input-area" onsubmit="sendChatMessage(event)"><input type="text" class="chat-input" id="chatInput" placeholder="Escribe un mensaje..." required><button type="submit" class="btn-send">➤</button></form>`; await db.collection('chats').doc(chatId).update({ lastMessageRead: true }); updateChatBadge(); loadChatMessages(chatId); }
 function loadChatMessages(chatId) { db.collection('chats').doc(chatId).collection('messages').orderBy('timestamp', 'asc').onSnapshot(snapshot => { const container = document.getElementById('chatMessages'); if (!container) return; container.innerHTML = ''; if (snapshot.empty) { container.innerHTML = '<div class="empty-chat">Inicia la conversación</div>'; return; } snapshot.forEach(doc => { const msg = doc.data(); const isUser = msg.senderId === currentUser.uid; const time = msg.timestamp ? msg.timestamp.toDate().toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'}) : ''; const div = document.createElement('div'); div.className = `message ${isUser ? 'user' : 'support'}`; div.innerHTML = `${msg.text}<div class="message-time">${time}</div>`; container.appendChild(div); }); container.scrollTop = container.scrollHeight; }); }
 async function sendChatMessage(e) { e.preventDefault(); const input = document.getElementById('chatInput'); const text = input.value.trim(); if (!text || !currentUser || !currentChatId) return; try { await db.collection('chats').doc(currentChatId).collection('messages').add({ senderId: currentUser.uid, senderName: currentUser.email, text: text, timestamp: firebase.firestore.FieldValue.serverTimestamp() }); await db.collection('chats').doc(currentChatId).update({ lastMessage: text, lastMessageAt: firebase.firestore.FieldValue.serverTimestamp(), lastMessageBy: currentUser.uid, lastMessageRead: false }); input.value = ''; } catch (error) { showToast("Error al enviar: " + error.message, "error"); } }
 function openNewChatModal() { document.getElementById('newChatEmail').value = ''; document.getElementById('newChatModal').classList.add('active'); setTimeout(() => document.getElementById('newChatEmail').focus(), 100); }
@@ -907,10 +908,10 @@ function loadAiChat(id) {
     if (msg.role === 'system') return;
     const div = document.createElement('div'); 
     div.className = `ai-msg ${msg.role === 'assistant' ? 'bot' : 'user'}`; 
-    const avatar = msg.role === 'user' ? '👤' : '🤖'; 
+    const avatar = msg.role === 'user' ? '👤' : ''; 
     let contentHtml = formatAiResponse(msg.content); 
-    if (msg.attachment) contentHtml = `<div class="ai-file-attachment">📎 ${escapeHtml(msg.attachment.name)}</div>` + contentHtml; 
-    div.innerHTML = `<div class="ai-msg-avatar">${avatar}</div><div class="ai-msg-content">${contentHtml}<div class="ai-msg-actions"><span class="ai-action-icon" onclick="copyToClipboard(this)" title="Copiar"></span></div></div>`; 
+    if (msg.attachment) contentHtml = `<div class="ai-file-attachment"> ${escapeHtml(msg.attachment.name)}</div>` + contentHtml; 
+    div.innerHTML = `<div class="ai-msg-avatar">${avatar}</div><div class="ai-msg-content">${contentHtml}<div class="ai-msg-actions"><span class="ai-action-icon" onclick="copyToClipboard(this)" title="Copiar">📋</span></div></div>`; 
     container.appendChild(div); 
   }); 
   container.scrollTop = container.scrollHeight; 
@@ -996,7 +997,7 @@ async function sendAiUltimateMessage() {
   container.appendChild(userMsgDiv); container.scrollTop = container.scrollHeight; 
   input.value = ''; autoResizeTextarea(input); const currentAttachment = aiAttachedFile; aiAttachedFile = null; renderAiAttachment(); 
   const botMsgDiv = document.createElement('div'); botMsgDiv.className = 'ai-msg bot'; 
-  botMsgDiv.innerHTML = `<div class="ai-msg-avatar">🤖</div><div class="ai-msg-content"><span class="spinner" style="border-color:#565f89;border-top-color:var(--ai-accent)"></span> Pensando...</div>`; 
+  botMsgDiv.innerHTML = `<div class="ai-msg-avatar"></div><div class="ai-msg-content"><span class="spinner" style="border-color:#565f89;border-top-color:var(--ai-accent)"></span> Pensando...</div>`; 
   container.appendChild(botMsgDiv); container.scrollTop = container.scrollHeight; 
   try { 
     const imageKeywords = ['imagen', 'foto', 'dibujo', 'genera', 'crea', 'diseña', 'ilustra', 'picture', 'image', 'draw'];
@@ -1016,7 +1017,7 @@ async function sendAiUltimateMessage() {
       else { const errData = await response.json(); responseText = `(Error en OpenRouter: ${errData.error?.message || response.status}). \n\nSimulación de respuesta para: "${text}"`; aiTokensUsed += 20; } 
     } 
     let contentHtml = formatAiResponse(responseText); if (imageUrl) contentHtml += `<br><img src="${imageUrl}" class="ai-generated-image" alt="Generated Image" onclick="window.open(this.src)">`; 
-    contentHtml += `<div class="ai-msg-actions"><span class="ai-action-icon" onclick="copyToClipboard(this)" title="Copiar"></span></div>`; 
+    contentHtml += `<div class="ai-msg-actions"><span class="ai-action-icon" onclick="copyToClipboard(this)" title="Copiar">📋</span></div>`; 
     botMsgDiv.querySelector('.ai-msg-content').innerHTML = contentHtml; 
     chats[aiCurrentChatId].push({ role: 'assistant', content: responseText }); saveAiChats(chats); 
     document.getElementById('aiTokenCount').textContent = aiTokensUsed; 
@@ -1256,7 +1257,7 @@ async function startConversion() {
   statusDiv.innerHTML = '<span class="spinner"></span> Convirtiendo...';
   try {
     await new Promise(r => setTimeout(r, 2500));
-    statusDiv.innerHTML = `✅ ¡Conversión completada! <br><br><a href="#" class="btn btn-primary" style="width:auto; display:inline-flex; margin-top:10px;" onclick="downloadConvertedFile('${currentConverterFile.name}', '${targetFormat}')">️ Descargar .${targetFormat.toUpperCase()}</a>`;
+    statusDiv.innerHTML = `✅ ¡Conversión completada! <br><br><a href="#" class="btn btn-primary" style="width:auto; display:inline-flex; margin-top:10px;" onclick="downloadConvertedFile('${currentConverterFile.name}', '${targetFormat}')">⬇️ Descargar .${targetFormat.toUpperCase()}</a>`;
   } catch (error) { statusDiv.innerHTML = `❌ Error en la conversión: ${error.message}`; }
 }
 
@@ -1267,7 +1268,7 @@ function downloadConvertedFile(originalName, targetExt) {
   showToast("Archivo descargado (simulación)", "success");
 }
 
-// 6. EMULADOR ARCADE CON SISTEMA DE GUARDADO AUTOMÁTICO (SOLO RETRO)
+// 6. EMULADOR ARCADE CON SISTEMA DE GUARDADO AUTOMÁTICO (RETRO + NDS)
 let emulatorInstance = null;
 let currentRomUrl = '';
 
@@ -1329,6 +1330,7 @@ function getCoreFromExtension(ext) {
     'gba': 'gba', 'gb': 'gb', 'gbc': 'gb',
     'gen': 'segaMD', 'md': 'segaMD', 'bin': 'segaMD',
     'n64': 'n64', 'z64': 'n64',
+    'nds': 'nds', // NINTENDO DS SOportado
     'zip': 'arcade',
     'a26': 'atari2600', 'a78': 'atari7800',
     'neo': 'neogeo'
@@ -1344,10 +1346,10 @@ function loadRom(input) {
   const selectedCore = document.getElementById('consoleSelect').value;
   let core = selectedCore === 'auto' ? getCoreFromExtension(ext) : selectedCore;
   
-  // Validar que la extensión sea compatible con emulación web
-  const validExts = ['nes', 'sfc', 'smc', 'gba', 'gb', 'gbc', 'gen', 'md', 'bin', 'n64', 'z64', 'zip', 'a26', 'a78', 'neo'];
+  // Validar que la extensión sea compatible con emulación web (INCLUYE NDS)
+  const validExts = ['nes', 'sfc', 'smc', 'gba', 'gb', 'gbc', 'gen', 'md', 'bin', 'n64', 'z64', 'nds', 'zip', 'a26', 'a78', 'neo'];
   if (!validExts.includes(ext)) {
-    showToast(`⚠️ Formato .${ext} no soportado. Usa solo ROMs retro (NES, SNES, GBA, Genesis, N64, Arcade).`, "error");
+    showToast(`⚠️ Formato .${ext} no soportado. Usa solo ROMs retro (NES, SNES, GBA, Genesis, N64, NDS, Arcade).`, "error");
     input.value = '';
     return;
   }
@@ -1358,7 +1360,7 @@ function loadRom(input) {
   currentRomUrl = romUrl;
   
   loadRomWithCore(romUrl, core, currentRomName);
-  showToast(` Cargando ${file.name} (${core.toUpperCase()})`, "success");
+  showToast(`🎮 Cargando ${file.name} (${core.toUpperCase()})`, "success");
   input.value = '';
 }
 
@@ -1459,7 +1461,7 @@ function deleteSaveState() {
   }
   if (confirm(`¿Borrar permanentemente la partida guardada de "${currentRomName}"?`)) {
     localStorage.removeItem(getSaveKey(currentRomName));
-    showToast("🗑️ Partida borrada", "success");
+    showToast("️ Partida borrada", "success");
   }
 }
 
