@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portal VITVISOR - Ultimate Suite + Arcade Retro</title>
+<title>Portal VITVISOR - Ultimate Suite + Arcade Español</title>
 <style>
   :root {
     --blue-dark: #0f172a; --blue-primary: #1e40af; --blue-light: #3b82f6;
@@ -364,7 +364,7 @@
     <!-- NUEVA PESTAÑA ARCADE -->
     <div class="nav-item" onclick="showView('arcade', this)">🕹️ Arcade</div>
     
-    <div class="nav-item" onclick="showView('password', this)"> Cambiar Contraseña</div>
+    <div class="nav-item" onclick="showView('password', this)">🔒 Cambiar Contraseña</div>
     <div class="user-profile">
       <div class="user-avatar" id="userAvatar">U</div>
       <div class="user-info">
@@ -458,7 +458,7 @@
 
     <!-- IA ULTIMATE VIEW -->
     <div id="view-ai" class="hidden">
-      <div class="page-header"><h2>IA Vitvisor Ultimate ✨</h2><p>Ultimate Edition · Powered by OpenRouter + Whisper Web</p></div>
+      <div class="page-header"><h2>IA Vitvisor Ultimate </h2><p>Ultimate Edition · Powered by OpenRouter + Whisper Web</p></div>
       <div class="ai-ultimate-wrapper">
         <div class="ai-history-sidebar">
           <div class="ai-history-header">
@@ -514,7 +514,7 @@
         
         <!-- TRANSCRIPTOR DE AUDIO GRATIS -->
         <div class="tool-card">
-          <h3 style="margin-bottom: 20px; color: var(--blue-dark); display:flex; align-items:center; gap:10px;">🎙️ Transcriptor de Audio (Whisper Web)</h3>
+          <h3 style="margin-bottom: 20px; color: var(--blue-dark); display:flex; align-items:center; gap:10px;">️ Transcriptor de Audio (Whisper Web)</h3>
           <p style="color:var(--text-light); margin-bottom:15px; font-size:14px;">Transcribe audios localmente. <strong>100% Gratis y Privado.</strong></p>
           <div class="converter-dropzone" id="audioDropzone" onclick="document.getElementById('whisperInput').click()">
             <div style="font-size: 40px; margin-bottom: 10px;">🎧</div>
@@ -570,7 +570,7 @@
             <div class="converter-options">
               <span style="font-weight: 600; white-space: nowrap;">Convertir a:</span>
               <select id="targetFormat"></select>
-              <button class="btn btn-primary" style="width: auto;" onclick="startConversion()"> Convertir</button>
+              <button class="btn btn-primary" style="width: auto;" onclick="startConversion()">⚡ Convertir</button>
             </div>
             <div id="conversionStatus" style="text-align: center; color: var(--text-light); margin-top:10px;"></div>
           </div>
@@ -601,12 +601,12 @@
             <div class="doc-desc">Crear archivo .doc compatible</div>
           </div>
           <div class="doc-type-card excel" onclick="openEditor('excel')">
-            <div class="doc-icon"></div>
+            <div class="doc-icon">📗</div>
             <div class="doc-title">Hoja de Cálculo</div>
             <div class="doc-desc">Crear archivo .csv (Excel)</div>
           </div>
           <div class="doc-type-card ppt" onclick="openEditor('ppt')">
-            <div class="doc-icon">📙</div>
+            <div class="doc-icon"></div>
             <div class="doc-title">Presentación</div>
             <div class="doc-desc">Crear archivo .pptx básico</div>
           </div>
@@ -649,9 +649,9 @@
       </div>
     </div>
 
-    <!-- NUEVA VISTA: ARCADE CON SISTEMA DE GUARDADO (RETRO + NDS) -->
+    <!-- NUEVA VISTA: ARCADE CON SISTEMA DE GUARDADO (RETRO + NDS + ESPAÑOL) -->
     <div id="view-arcade" class="hidden">
-      <div class="page-header"><h2>️ Zona Arcade Retro</h2><p>Tómate un descanso. Tus partidas se guardan automáticamente.</p></div>
+      <div class="page-header"><h2>🕹️ Zona Arcade Retro</h2><p>Tómate un descanso. Tus partidas se guardan automáticamente.</p></div>
       <div class="arcade-container">
         <div class="emulator-wrapper" id="emulator-container">
           <!-- EmulatorJS se cargará aquí -->
@@ -681,7 +681,7 @@
 
           <div class="rom-upload-area">
             <label class="rom-upload-label">
-               Cargar ROM Retro
+                Cargar ROM Retro
               <input type="file" id="romInput" style="display:none" accept=".nes,.sfc,.smc,.gba,.gb,.gbc,.gen,.md,.bin,.n64,.z64,.nds,.zip,.a26,.neo" onchange="loadRom(this)">
             </label>
           </div>
@@ -694,7 +694,7 @@
           </div>
           
           <div class="arcade-note">
-            ️ Nota: Soporta NES, SNES, GBA, Genesis, N64, NDS, Arcade y Atari. 
+            ⚠️ Nota: Soporta NES, SNES, GBA, Genesis, N64, NDS, Arcade y Atari. 
             Las partidas se guardan automáticamente al pausar. 
             Asegúrate de tener derechos legales sobre las ROMs que uses.
           </div>
@@ -709,10 +709,10 @@
         <h3>Nueva contraseña</h3>
         <form id="passwordForm" onsubmit="handleChangePassword(event)">
           <div class="form-group"><label>Contraseña actual</label><div class="password-field"><input type="password" id="currentPassword" required placeholder="Introduce tu contraseña actual"><button type="button" class="eye-toggle" onclick="togglePassword('currentPassword', this)">👁️</button></div></div>
-          <div class="form-group"><label>Nueva contraseña</label><div class="password-field"><input type="password" id="newPassword" required placeholder="Introduce la nueva contraseña" oninput="checkPasswordStrength()"><button type="button" class="eye-toggle" onclick="togglePassword('newPassword', this)">️</button></div><div class="password-strength" id="passwordStrength"></div></div>
-          <div class="form-group"><label>Confirmar nueva contraseña</label><div class="password-field"><input type="password" id="confirmPassword" required placeholder="Repite la nueva contraseña" oninput="checkPasswordMatch()"><button type="button" class="eye-toggle" onclick="togglePassword('confirmPassword', this)">️</button></div><div class="password-strength" id="passwordMatch"></div></div>
+          <div class="form-group"><label>Nueva contraseña</label><div class="password-field"><input type="password" id="newPassword" required placeholder="Introduce la nueva contraseña" oninput="checkPasswordStrength()"><button type="button" class="eye-toggle" onclick="togglePassword('newPassword', this)">👁️</button></div><div class="password-strength" id="passwordStrength"></div></div>
+          <div class="form-group"><label>Confirmar nueva contraseña</label><div class="password-field"><input type="password" id="confirmPassword" required placeholder="Repite la nueva contraseña" oninput="checkPasswordMatch()"><button type="button" class="eye-toggle" onclick="togglePassword('confirmPassword', this)">👁️</button></div><div class="password-strength" id="passwordMatch"></div></div>
           <div class="password-requirements"><strong>Requisitos de la contraseña:</strong><ul><li id="req-length">❌ Mínimo 8 caracteres</li><li id="req-upper">❌ Al menos una mayúscula</li><li id="req-lower">❌ Al menos una minúscula</li><li id="req-number">❌ Al menos un número</li><li id="req-special">❌ Al menos un carácter especial (!@#$%^&*)</li></ul></div>
-          <button type="submit" class="btn btn-primary" id="changePassBtn" style="margin-top: 20px;">🔐 Cambiar Contraseña</button>
+          <button type="submit" class="btn btn-primary" id="changePassBtn" style="margin-top: 20px;"> Cambiar Contraseña</button>
         </form>
       </div>
     </div>
@@ -788,14 +788,14 @@ function showToast(msg, type = 'success') { const toast = document.createElement
 // PASSWORD LOGIC
 function togglePassword(fieldId, btn) { const field = document.getElementById(fieldId); if (field.type === 'password') { field.type = 'text'; btn.textContent = ''; } else { field.type = 'password'; btn.textContent = '👁️'; } }
 function checkPasswordStrength() { const password = document.getElementById('newPassword').value; const strengthEl = document.getElementById('passwordStrength'); let score = 0; if (password.length >= 8) score++; if (/[A-Z]/.test(password)) score++; if (/[a-z]/.test(password)) score++; if (/[0-9]/.test(password)) score++; if (/[^A-Za-z0-9]/.test(password)) score++; if (password.length === 0) { strengthEl.textContent = ''; strengthEl.className = 'password-strength'; } else if (score <= 2) { strengthEl.textContent = '🔴 Débil'; strengthEl.className = 'password-strength strength-weak'; } else if (score <= 4) { strengthEl.textContent = '🟡 Media'; strengthEl.className = 'password-strength strength-medium'; } else { strengthEl.textContent = '🟢 Fuerte'; strengthEl.className = 'password-strength strength-strong'; } updateRequirement('req-length', password.length >= 8); updateRequirement('req-upper', /[A-Z]/.test(password)); updateRequirement('req-lower', /[a-z]/.test(password)); updateRequirement('req-number', /[0-9]/.test(password)); updateRequirement('req-special', /[^A-Za-z0-9]/.test(password)); checkPasswordMatch(); }
-function updateRequirement(id, valid) { const el = document.getElementById(id); if (valid) { el.textContent = el.textContent.replace('', '✅'); el.classList.add('valid'); el.classList.remove('invalid'); } else { el.textContent = el.textContent.replace('✅', ''); el.classList.remove('valid'); el.classList.add('invalid'); } }
+function updateRequirement(id, valid) { const el = document.getElementById(id); if (valid) { el.textContent = el.textContent.replace('❌', '✅'); el.classList.add('valid'); el.classList.remove('invalid'); } else { el.textContent = el.textContent.replace('✅', ''); el.classList.remove('valid'); el.classList.add('invalid'); } }
 function checkPasswordMatch() { const newPass = document.getElementById('newPassword').value; const confirmPass = document.getElementById('confirmPassword').value; const matchEl = document.getElementById('passwordMatch'); if (confirmPass.length === 0) { matchEl.textContent = ''; return; } if (newPass === confirmPass) { matchEl.textContent = '✅ Las contraseñas coinciden'; matchEl.className = 'password-strength strength-strong'; } else { matchEl.textContent = '❌ Las contraseñas no coinciden'; matchEl.className = 'password-strength strength-weak'; } }
 async function handleChangePassword(e) { e.preventDefault(); const currentPassword = document.getElementById('currentPassword').value; const newPassword = document.getElementById('newPassword').value; const confirmPassword = document.getElementById('confirmPassword').value; const btn = document.getElementById('changePassBtn'); if (newPassword !== confirmPassword) { showToast("Las contraseñas nuevas no coinciden", "error"); return; } if (newPassword.length < 8) { showToast("La contraseña debe tener al menos 8 caracteres", "error"); return; } if (newPassword === currentPassword) { showToast("La nueva contraseña no puede ser igual a la actual", "error"); return; } btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> Cambiando...'; try { const credential = firebase.auth.EmailAuthProvider.credential(currentUser.email, currentPassword); await currentUser.reauthenticateWithCredential(credential); await currentUser.updatePassword(newPassword); showToast("✅ Contraseña cambiada correctamente", "success"); document.getElementById('passwordForm').reset(); document.getElementById('passwordStrength').textContent = ''; document.getElementById('passwordMatch').textContent = ''; ['req-length', 'req-upper', 'req-lower', 'req-number', 'req-special'].forEach(id => { const el = document.getElementById(id); el.textContent = el.textContent.replace('✅', ''); el.classList.remove('valid'); el.classList.add('invalid'); }); } catch (error) { if (error.code === 'auth/wrong-password') showToast("La contraseña actual es incorrecta", "error"); else if (error.code === 'auth/weak-password') showToast("La contraseña es demasiado débil", "error"); else if (error.code === 'auth/requires-recent-login') showToast("Por seguridad, cierra sesión y vuelve a iniciar", "error"); else showToast("Error: " + error.message, "error"); } finally { btn.disabled = false; btn.innerHTML = '🔐 Cambiar Contraseña'; } }
 
 // VITDRIVE LOGIC
 function loadItems() { if (filesUnsubscribe) filesUnsubscribe(); const container = document.getElementById('filesContainer'); container.innerHTML = '<p style="text-align:center;color:var(--text-light);padding:40px;">Cargando...</p>'; filesUnsubscribe = db.collection('users').doc(currentUser.uid).collection('items').onSnapshot(snapshot => { allItems = []; snapshot.forEach(doc => allItems.push({ id: doc.id, ...doc.data() })); renderBreadcrumb(); filterFiles(); }, error => container.innerHTML = `<p style="text-align:center;color:var(--error);">Error: ${error.message}</p>`); }
 function getCurrentFolderItems() { return allItems.filter(item => (item.parentFolderId || null) === currentFolderId); }
-function renderBreadcrumb() { const bc = document.getElementById('breadcrumb'); let html = `<span class="breadcrumb-item ${currentPath.length === 0 ? 'active' : ''}" onclick="navigateTo(null)"> Inicio</span>`; currentPath.forEach((folder, idx) => { html += `<span class="breadcrumb-sep">›</span><span class="breadcrumb-item ${idx === currentPath.length - 1 ? 'active' : ''}" onclick="navigateToFolder('${folder.id}', ${idx})">${folder.name}</span>`; }); bc.innerHTML = html; }
+function renderBreadcrumb() { const bc = document.getElementById('breadcrumb'); let html = `<span class="breadcrumb-item ${currentPath.length === 0 ? 'active' : ''}" onclick="navigateTo(null)">🏠 Inicio</span>`; currentPath.forEach((folder, idx) => { html += `<span class="breadcrumb-sep">›</span><span class="breadcrumb-item ${idx === currentPath.length - 1 ? 'active' : ''}" onclick="navigateToFolder('${folder.id}', ${idx})">${folder.name}</span>`; }); bc.innerHTML = html; }
 function navigateTo(folderId) { currentFolderId = folderId; currentPath = folderId === null ? [] : buildPath(folderId); renderBreadcrumb(); filterFiles(); }
 function buildPath(folderId) { const stack = []; let current = folderId; while (current) { const folder = allItems.find(i => i.id === current); if (!folder) break; stack.unshift({ id: folder.id, name: folder.name }); current = folder.parentFolderId || null; } return stack; }
 function navigateToFolder(folderId, pathIndex) { currentPath = buildPath(folderId); currentFolderId = folderId; renderBreadcrumb(); filterFiles(); }
@@ -835,15 +835,15 @@ async function handleFileUpload(input) {
 function formatFileSize(bytes) { if (bytes < 1024) return bytes + ' B'; if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB'; return (bytes / (1024 * 1024)).toFixed(2) + ' MB'; }
 function getFileIcon(filename) {
   const ext = filename.split('.').pop().toLowerCase();
-  const icons = { 'jpg':'🖼️','jpeg':'🖼️','png':'️','gif':'🖼️','webp':'🖼️','svg':'🖼️','mp4':'🎬','mov':'','avi':'🎬','mkv':'','webm':'🎬','pdf':'📄','doc':'📝','docx':'📝','odt':'📝','xls':'📊','xlsx':'📊','csv':'📊','ods':'📊','ppt':'📽️','pptx':'️','zip':'🗜️','rar':'🗜️','7z':'🗜️','tar':'🗜️','gz':'️','mp3':'🎵','wav':'🎵','ogg':'🎵','flac':'🎵','txt':'📃','md':'📃','html':'🌐','css':'🎨','js':'⚙️','py':'🐍','java':'☕' };
-  return icons[ext] || '';
+  const icons = { 'jpg':'🖼️','jpeg':'🖼️','png':'🖼️','gif':'🖼️','webp':'️','svg':'🖼️','mp4':'🎬','mov':'🎬','avi':'🎬','mkv':'','webm':'🎬','pdf':'📄','doc':'📝','docx':'','odt':'📝','xls':'📊','xlsx':'📊','csv':'📊','ods':'📊','ppt':'📽️','pptx':'📽️','zip':'🗜️','rar':'️','7z':'🗜️','tar':'🗜️','gz':'🗜️','mp3':'🎵','wav':'🎵','ogg':'🎵','flac':'🎵','txt':'📃','md':'📃','html':'🌐','css':'🎨','js':'⚙️','py':'🐍','java':'☕' };
+  return icons[ext] || '📄';
 }
 
 // CHAT LOGIC
 function loadChats() { if (chatUnsubscribe) chatUnsubscribe(); chatUnsubscribe = db.collection('chats').onSnapshot(snapshot => { allChats = []; unreadCount = 0; snapshot.forEach(doc => { const chat = { id: doc.id, ...doc.data() }; const isParticipant = chat.participants && chat.participants.some(p => p.uid === currentUser.uid); if (isParticipant) { allChats.push(chat); if (chat.lastMessageBy !== currentUser.uid && !chat.lastMessageRead) unreadCount++; } }); allChats.sort((a, b) => (b.lastMessageAt?.toMillis?.() || 0) - (a.lastMessageAt?.toMillis?.() || 0)); updateChatBadge(); renderChatList(); if (currentChatId) openChat(currentChatId); }, error => console.error("Error cargando chats:", error)); }
 function updateChatBadge() { const badge = document.getElementById('chatBadge'); if (unreadCount > 0) { badge.textContent = unreadCount; badge.classList.remove('hidden'); } else { badge.classList.add('hidden'); } }
 function renderChatList() { const chatList = document.getElementById('chatList'); if (allChats.length === 0) { chatList.innerHTML = '<div style="padding: 20px; text-align: center; color: var(--text-light);">No hay conversaciones</div>'; return; } chatList.innerHTML = allChats.map(chat => { const otherUser = chat.participants.find(p => p.uid !== currentUser.uid); const isActive = currentChatId === chat.id; const isUnread = chat.lastMessageBy !== currentUser.uid && !chat.lastMessageRead; const time = chat.lastMessageAt ? chat.lastMessageAt.toDate().toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'}) : ''; return `<div class="chat-item ${isActive ? 'active' : ''}" onclick="openChat('${chat.id}')"><div class="chat-avatar">${otherUser ? otherUser.name.substring(0, 2).toUpperCase() : '?'}</div><div class="chat-info"><div class="chat-name">${otherUser ? otherUser.name : 'Usuario desconocido'}</div><div class="chat-preview">${chat.lastMessage || 'Sin mensajes'}</div></div><div class="chat-meta"><div class="chat-time">${time}</div>${isUnread ? '<div class="unread-badge">1</div>' : ''}</div></div>`; }).join(''); }
-async function openChat(chatId) { currentChatId = chatId; renderChatList(); const chat = allChats.find(c => c.id === chatId); if (!chat) return; const otherUser = chat.participants.find(p => p.uid !== currentUser.uid); const chatMain = document.getElementById('chatMain'); chatMain.innerHTML = `<div class="chat-header"><div class="chat-header-avatar">${otherUser ? otherUser.name.substring(0, 2).toUpperCase() : '?'}</div><div class="chat-header-info"><div class="chat-header-name">${otherUser ? otherUser.name : 'Usuario'}</div><div class="chat-header-status"><div class="status-dot"></div> ${otherUser ? otherUser.email : ''}</div></div></div><div class="chat-messages" id="chatMessages"></div><form class="chat-input-area" onsubmit="sendChatMessage(event)"><input type="text" class="chat-input" id="chatInput" placeholder="Escribe un mensaje..." required><button type="submit" class="btn-send">➤</button></form>`; await db.collection('chats').doc(chatId).update({ lastMessageRead: true }); updateChatBadge(); loadChatMessages(chatId); }
+async function openChat(chatId) { currentChatId = chatId; renderChatList(); const chat = allChats.find(c => c.id === chatId); if (!chat) return; const otherUser = chat.participants.find(p => p.uid !== currentUser.uid); const chatMain = document.getElementById('chatMain'); chatMain.innerHTML = `<div class="chat-header"><div class="chat-header-avatar">${otherUser ? otherUser.name.substring(0, 2).toUpperCase() : '?'}</div><div class="chat-header-info"><div class="chat-header-name">${otherUser ? otherUser.name : 'Usuario'}</div><div class="chat-header-status"><div class="status-dot"></div> ${otherUser ? otherUser.email : ''}</div></div></div><div class="chat-messages" id="chatMessages"></div><form class="chat-input-area" onsubmit="sendChatMessage(event)"><input type="text" class="chat-input" id="chatInput" placeholder="Escribe un mensaje..." required><button type="submit" class="btn-send"></button></form>`; await db.collection('chats').doc(chatId).update({ lastMessageRead: true }); updateChatBadge(); loadChatMessages(chatId); }
 function loadChatMessages(chatId) { db.collection('chats').doc(chatId).collection('messages').orderBy('timestamp', 'asc').onSnapshot(snapshot => { const container = document.getElementById('chatMessages'); if (!container) return; container.innerHTML = ''; if (snapshot.empty) { container.innerHTML = '<div class="empty-chat">Inicia la conversación</div>'; return; } snapshot.forEach(doc => { const msg = doc.data(); const isUser = msg.senderId === currentUser.uid; const time = msg.timestamp ? msg.timestamp.toDate().toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'}) : ''; const div = document.createElement('div'); div.className = `message ${isUser ? 'user' : 'support'}`; div.innerHTML = `${msg.text}<div class="message-time">${time}</div>`; container.appendChild(div); }); container.scrollTop = container.scrollHeight; }); }
 async function sendChatMessage(e) { e.preventDefault(); const input = document.getElementById('chatInput'); const text = input.value.trim(); if (!text || !currentUser || !currentChatId) return; try { await db.collection('chats').doc(currentChatId).collection('messages').add({ senderId: currentUser.uid, senderName: currentUser.email, text: text, timestamp: firebase.firestore.FieldValue.serverTimestamp() }); await db.collection('chats').doc(currentChatId).update({ lastMessage: text, lastMessageAt: firebase.firestore.FieldValue.serverTimestamp(), lastMessageBy: currentUser.uid, lastMessageRead: false }); input.value = ''; } catch (error) { showToast("Error al enviar: " + error.message, "error"); } }
 function openNewChatModal() { document.getElementById('newChatEmail').value = ''; document.getElementById('newChatModal').classList.add('active'); setTimeout(() => document.getElementById('newChatEmail').focus(), 100); }
@@ -864,7 +864,7 @@ function startNewAiChat() {
   const chats = getAiChats(); 
   chats[aiCurrentChatId] = [
     { role: 'system', content: 'Eres Vitvisor Ultimate, un asistente experto y amable. Responde SIEMPRE en español.' },
-    { role: 'assistant', content: '¡Hola! Soy Vitvisor Ultimate. Tengo memoria persistente y puedo leer archivos adjuntos. ¿En qué te ayudo hoy? 👇' }
+    { role: 'assistant', content: '¡Hola! Soy Vitvisor Ultimate. Tengo memoria persistente y puedo leer archivos adjuntos. ¿En qué te ayudo hoy? ' }
   ]; 
   saveAiChats(chats); 
   renderAiHistory(); 
@@ -883,7 +883,7 @@ function renderAiHistory() {
     const isActive = id === aiCurrentChatId ? 'active' : ''; 
     return `<div class="ai-history-item ${isActive}" onclick="loadAiChat('${id}')">
               <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1;">${title}</span>
-              <span class="delete-chat" onclick="event.stopPropagation(); deleteAiChat('${id}')" title="Eliminar chat">🗑️</span>
+              <span class="delete-chat" onclick="event.stopPropagation(); deleteAiChat('${id}')" title="Eliminar chat">️</span>
             </div>`; 
   }).join(''); 
 }
@@ -908,9 +908,9 @@ function loadAiChat(id) {
     if (msg.role === 'system') return;
     const div = document.createElement('div'); 
     div.className = `ai-msg ${msg.role === 'assistant' ? 'bot' : 'user'}`; 
-    const avatar = msg.role === 'user' ? '👤' : ''; 
+    const avatar = msg.role === 'user' ? '👤' : '🤖'; 
     let contentHtml = formatAiResponse(msg.content); 
-    if (msg.attachment) contentHtml = `<div class="ai-file-attachment"> ${escapeHtml(msg.attachment.name)}</div>` + contentHtml; 
+    if (msg.attachment) contentHtml = `<div class="ai-file-attachment">📎 ${escapeHtml(msg.attachment.name)}</div>` + contentHtml; 
     div.innerHTML = `<div class="ai-msg-avatar">${avatar}</div><div class="ai-msg-content">${contentHtml}<div class="ai-msg-actions"><span class="ai-action-icon" onclick="copyToClipboard(this)" title="Copiar">📋</span></div></div>`; 
     container.appendChild(div); 
   }); 
@@ -997,7 +997,7 @@ async function sendAiUltimateMessage() {
   container.appendChild(userMsgDiv); container.scrollTop = container.scrollHeight; 
   input.value = ''; autoResizeTextarea(input); const currentAttachment = aiAttachedFile; aiAttachedFile = null; renderAiAttachment(); 
   const botMsgDiv = document.createElement('div'); botMsgDiv.className = 'ai-msg bot'; 
-  botMsgDiv.innerHTML = `<div class="ai-msg-avatar"></div><div class="ai-msg-content"><span class="spinner" style="border-color:#565f89;border-top-color:var(--ai-accent)"></span> Pensando...</div>`; 
+  botMsgDiv.innerHTML = `<div class="ai-msg-avatar">🤖</div><div class="ai-msg-content"><span class="spinner" style="border-color:#565f89;border-top-color:var(--ai-accent)"></span> Pensando...</div>`; 
   container.appendChild(botMsgDiv); container.scrollTop = container.scrollHeight; 
   try { 
     const imageKeywords = ['imagen', 'foto', 'dibujo', 'genera', 'crea', 'diseña', 'ilustra', 'picture', 'image', 'draw'];
@@ -1007,7 +1007,7 @@ async function sendAiUltimateMessage() {
       await new Promise(r => setTimeout(r, 1500)); 
       const encodedPrompt = encodeURIComponent(`${text}, style: ${aiCurrentStyle}, high quality, detailed, 8k, masterpiece`); 
       imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=1024&height=1024&nologo=true&seed=${Math.floor(Math.random()*1000)}&model=flux`; 
-      responseText = `He generado una imagen con el estilo **${aiCurrentStyle}** usando el modelo FLUX.1-dev. ¡Espero que te guste! 🎨`; aiTokensUsed += 50; 
+      responseText = `He generado una imagen con el estilo **${aiCurrentStyle}** usando el modelo FLUX.1-dev. ¡Espero que te guste! `; aiTokensUsed += 50; 
     } else { 
       let fullPrompt = text; if (currentAttachment) fullPrompt = `Analiza el siguiente archivo adjunto llamado "${currentAttachment.name}" y responde a esta pregunta: "${text}".\n\nContenido del archivo:\n${currentAttachment.content}`; 
       const messagesForAPI = chats[aiCurrentChatId].filter(m => m.role !== 'system' && !m.attachment);
@@ -1235,7 +1235,7 @@ function handleConverterFile(input) {
   const file = input.files[0]; if (!file) return;
   currentConverterFile = file;
   const dropzone = document.getElementById('converterDropzone');
-  dropzone.innerHTML = `<div style="font-size: 40px; margin-bottom: 10px;">📄</div><p style="color: var(--text-dark); font-weight: 600;">${file.name}</p><p style="font-size: 12px; color: var(--text-light);">${formatFileSize(file.size)}</p>`;
+  dropzone.innerHTML = `<div style="font-size: 40px; margin-bottom: 10px;"></div><p style="color: var(--text-dark); font-weight: 600;">${file.name}</p><p style="font-size: 12px; color: var(--text-light);">${formatFileSize(file.size)}</p>`;
   dropzone.style.borderColor = 'var(--success)'; dropzone.style.background = 'rgba(16, 185, 129, 0.05)';
   const optionsDiv = document.getElementById('converterOptions'); optionsDiv.classList.remove('hidden');
   const targetSelect = document.getElementById('targetFormat'); targetSelect.innerHTML = '';
@@ -1268,7 +1268,7 @@ function downloadConvertedFile(originalName, targetExt) {
   showToast("Archivo descargado (simulación)", "success");
 }
 
-// 6. EMULADOR ARCADE CON SISTEMA DE GUARDADO AUTOMÁTICO (RETRO + NDS)
+// 6. EMULADOR ARCADE CON SISTEMA DE GUARDADO AUTOMÁTICO (RETRO + NDS + ESPAÑOL)
 let emulatorInstance = null;
 let currentRomUrl = '';
 
@@ -1285,6 +1285,9 @@ function initEmulator() {
   window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
   window.EJS_startOnLoaded = true;
   window.EJS_color = '#f97316'; // Color naranja de VITVISOR
+  
+  // ✅ CONFIGURACIÓN DE IDIOMA ESPAÑOL
+  window.EJS_language = 'es'; 
   
   // Configuración de guardado automático
   window.EJS_saveState = true;
@@ -1330,7 +1333,7 @@ function getCoreFromExtension(ext) {
     'gba': 'gba', 'gb': 'gb', 'gbc': 'gb',
     'gen': 'segaMD', 'md': 'segaMD', 'bin': 'segaMD',
     'n64': 'n64', 'z64': 'n64',
-    'nds': 'nds', // NINTENDO DS SOportado
+    'nds': 'nds', // NINTENDO DS SOPORTADO
     'zip': 'arcade',
     'a26': 'atari2600', 'a78': 'atari7800',
     'neo': 'neogeo'
@@ -1377,6 +1380,10 @@ function loadRomWithCore(romUrl, core, romName) {
   window.EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
   window.EJS_startOnLoaded = true;
   window.EJS_color = '#f97316';
+  
+  // ✅ FORZAR IDIOMA ESPAÑOL EN CADA CARGA
+  window.EJS_language = 'es';
+  
   window.EJS_saveState = true;
   
   // Forzar recarga del loader
@@ -1461,7 +1468,7 @@ function deleteSaveState() {
   }
   if (confirm(`¿Borrar permanentemente la partida guardada de "${currentRomName}"?`)) {
     localStorage.removeItem(getSaveKey(currentRomName));
-    showToast("️ Partida borrada", "success");
+    showToast("🗑️ Partida borrada", "success");
   }
 }
 
