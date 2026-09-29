@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portal VITVISOR - Ultimate Suite + Arcade Save</title>
+<title>Portal VITVISOR - Ultimate Suite + Arcade Retro</title>
 <style>
   :root {
     --blue-dark: #0f172a; --blue-primary: #1e40af; --blue-light: #3b82f6;
@@ -355,10 +355,10 @@
     <!-- LOGO QUE LLEVA A INICIO -->
     <div class="sidebar-logo" onclick="showView('home', null)">VIT<span>VISOR</span></div>
     
-    <div class="nav-item active" onclick="showView('drive', this)">📁 VITDrive</div>
+    <div class="nav-item active" onclick="showView('drive', this)"> VITDrive</div>
     <div class="nav-item" onclick="showView('chat', this)">💬 Chats <span class="nav-badge hidden" id="chatBadge">0</span></div>
     <div class="nav-item" onclick="showView('ai', this)">✨ IA Vitvisor Ultimate</div>
-    <div class="nav-item" onclick="showView('tools', this)">🛠️ Herramientas</div>
+    <div class="nav-item" onclick="showView('tools', this)">️ Herramientas</div>
     <div class="nav-item" onclick="showView('docs', this)">📄 Documentos</div>
     <div class="nav-item" onclick="showView('code', this)">💻 Código</div>
     <!-- NUEVA PESTAÑA ARCADE -->
@@ -649,9 +649,9 @@
       </div>
     </div>
 
-    <!-- NUEVA VISTA: ARCADE CON SISTEMA DE GUARDADO -->
+    <!-- NUEVA VISTA: ARCADE CON SISTEMA DE GUARDADO (SOLO RETRO) -->
     <div id="view-arcade" class="hidden">
-      <div class="page-header"><h2>🕹️ Zona Arcade</h2><p>Tómate un descanso. Tus partidas se guardan automáticamente.</p></div>
+      <div class="page-header"><h2>🕹️ Zona Arcade Retro</h2><p>Tómate un descanso. Tus partidas se guardan automáticamente.</p></div>
       <div class="arcade-container">
         <div class="emulator-wrapper" id="emulator-container">
           <!-- EmulatorJS se cargará aquí -->
@@ -672,10 +672,6 @@
               <option value="gb">Game Boy / Color</option>
               <option value="segaMD">Sega Genesis / Mega Drive</option>
               <option value="n64">Nintendo 64</option>
-              <option value="psx">PlayStation 1</option>
-              <option value="nds">Nintendo DS</option>
-              <option value="psp">PSP</option>
-              <option value="wii">Nintendo Wii</option>
               <option value="arcade">Arcade (MAME/FBA)</option>
               <option value="atari2600">Atari 2600</option>
               <option value="neogeo">Neo Geo</option>
@@ -684,8 +680,8 @@
 
           <div class="rom-upload-area">
             <label class="rom-upload-label">
-               Cargar ROM / ISO
-              <input type="file" id="romInput" style="display:none" accept=".nes,.sfc,.smc,.gba,.gb,.gbc,.gen,.md,.iso,.bin,.cue,.n64,.z64,.nds,.cso,.wbfs,.zip,.a26,.neo" onchange="loadRom(this)">
+               Cargar ROM Retro
+              <input type="file" id="romInput" style="display:none" accept=".nes,.sfc,.smc,.gba,.gb,.gbc,.gen,.md,.bin,.n64,.z64,.zip,.a26,.neo" onchange="loadRom(this)">
             </label>
           </div>
           
@@ -697,9 +693,9 @@
           </div>
           
           <div class="arcade-note">
-            ⚠️ Nota: Las partidas se guardan automáticamente al pausar o cambiar de juego. 
-            Usa los botones de arriba para gestionar tus saves manualmente. 
-            Asegúrate de tener derechos legales sobre las ROMs/ISOs que uses.
+            ⚠️ Nota: Solo se soportan consolas retro (hasta N64/Arcade). 
+            Las partidas se guardan automáticamente al pausar. 
+            Asegúrate de tener derechos legales sobre las ROMs que uses.
           </div>
         </div>
       </div>
@@ -714,7 +710,7 @@
           <div class="form-group"><label>Contraseña actual</label><div class="password-field"><input type="password" id="currentPassword" required placeholder="Introduce tu contraseña actual"><button type="button" class="eye-toggle" onclick="togglePassword('currentPassword', this)">👁️</button></div></div>
           <div class="form-group"><label>Nueva contraseña</label><div class="password-field"><input type="password" id="newPassword" required placeholder="Introduce la nueva contraseña" oninput="checkPasswordStrength()"><button type="button" class="eye-toggle" onclick="togglePassword('newPassword', this)">👁️</button></div><div class="password-strength" id="passwordStrength"></div></div>
           <div class="form-group"><label>Confirmar nueva contraseña</label><div class="password-field"><input type="password" id="confirmPassword" required placeholder="Repite la nueva contraseña" oninput="checkPasswordMatch()"><button type="button" class="eye-toggle" onclick="togglePassword('confirmPassword', this)">👁️</button></div><div class="password-strength" id="passwordMatch"></div></div>
-          <div class="password-requirements"><strong>Requisitos de la contraseña:</strong><ul><li id="req-length">❌ Mínimo 8 caracteres</li><li id="req-upper">❌ Al menos una mayúscula</li><li id="req-lower">❌ Al menos una minúscula</li><li id="req-number">❌ Al menos un número</li><li id="req-special">❌ Al menos un carácter especial (!@#$%^&*)</li></ul></div>
+          <div class="password-requirements"><strong>Requisitos de la contraseña:</strong><ul><li id="req-length">❌ Mínimo 8 caracteres</li><li id="req-upper">❌ Al menos una mayúscula</li><li id="req-lower">❌ Al menos una minúscula</li><li id="req-number"> Al menos un número</li><li id="req-special">❌ Al menos un carácter especial (!@#$%^&*)</li></ul></div>
           <button type="submit" class="btn btn-primary" id="changePassBtn" style="margin-top: 20px;">🔐 Cambiar Contraseña</button>
         </form>
       </div>
@@ -790,7 +786,7 @@ function showToast(msg, type = 'success') { const toast = document.createElement
 
 // PASSWORD LOGIC
 function togglePassword(fieldId, btn) { const field = document.getElementById(fieldId); if (field.type === 'password') { field.type = 'text'; btn.textContent = ''; } else { field.type = 'password'; btn.textContent = '️'; } }
-function checkPasswordStrength() { const password = document.getElementById('newPassword').value; const strengthEl = document.getElementById('passwordStrength'); let score = 0; if (password.length >= 8) score++; if (/[A-Z]/.test(password)) score++; if (/[a-z]/.test(password)) score++; if (/[0-9]/.test(password)) score++; if (/[^A-Za-z0-9]/.test(password)) score++; if (password.length === 0) { strengthEl.textContent = ''; strengthEl.className = 'password-strength'; } else if (score <= 2) { strengthEl.textContent = ' Débil'; strengthEl.className = 'password-strength strength-weak'; } else if (score <= 4) { strengthEl.textContent = '🟡 Media'; strengthEl.className = 'password-strength strength-medium'; } else { strengthEl.textContent = '🟢 Fuerte'; strengthEl.className = 'password-strength strength-strong'; } updateRequirement('req-length', password.length >= 8); updateRequirement('req-upper', /[A-Z]/.test(password)); updateRequirement('req-lower', /[a-z]/.test(password)); updateRequirement('req-number', /[0-9]/.test(password)); updateRequirement('req-special', /[^A-Za-z0-9]/.test(password)); checkPasswordMatch(); }
+function checkPasswordStrength() { const password = document.getElementById('newPassword').value; const strengthEl = document.getElementById('passwordStrength'); let score = 0; if (password.length >= 8) score++; if (/[A-Z]/.test(password)) score++; if (/[a-z]/.test(password)) score++; if (/[0-9]/.test(password)) score++; if (/[^A-Za-z0-9]/.test(password)) score++; if (password.length === 0) { strengthEl.textContent = ''; strengthEl.className = 'password-strength'; } else if (score <= 2) { strengthEl.textContent = ' Débil'; strengthEl.className = 'password-strength strength-weak'; } else if (score <= 4) { strengthEl.textContent = '🟡 Media'; strengthEl.className = 'password-strength strength-medium'; } else { strengthEl.textContent = ' Fuerte'; strengthEl.className = 'password-strength strength-strong'; } updateRequirement('req-length', password.length >= 8); updateRequirement('req-upper', /[A-Z]/.test(password)); updateRequirement('req-lower', /[a-z]/.test(password)); updateRequirement('req-number', /[0-9]/.test(password)); updateRequirement('req-special', /[^A-Za-z0-9]/.test(password)); checkPasswordMatch(); }
 function updateRequirement(id, valid) { const el = document.getElementById(id); if (valid) { el.textContent = el.textContent.replace('❌', '✅'); el.classList.add('valid'); el.classList.remove('invalid'); } else { el.textContent = el.textContent.replace('✅', ''); el.classList.remove('valid'); el.classList.add('invalid'); } }
 function checkPasswordMatch() { const newPass = document.getElementById('newPassword').value; const confirmPass = document.getElementById('confirmPassword').value; const matchEl = document.getElementById('passwordMatch'); if (confirmPass.length === 0) { matchEl.textContent = ''; return; } if (newPass === confirmPass) { matchEl.textContent = '✅ Las contraseñas coinciden'; matchEl.className = 'password-strength strength-strong'; } else { matchEl.textContent = '❌ Las contraseñas no coinciden'; matchEl.className = 'password-strength strength-weak'; } }
 async function handleChangePassword(e) { e.preventDefault(); const currentPassword = document.getElementById('currentPassword').value; const newPassword = document.getElementById('newPassword').value; const confirmPassword = document.getElementById('confirmPassword').value; const btn = document.getElementById('changePassBtn'); if (newPassword !== confirmPassword) { showToast("Las contraseñas nuevas no coinciden", "error"); return; } if (newPassword.length < 8) { showToast("La contraseña debe tener al menos 8 caracteres", "error"); return; } if (newPassword === currentPassword) { showToast("La nueva contraseña no puede ser igual a la actual", "error"); return; } btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> Cambiando...'; try { const credential = firebase.auth.EmailAuthProvider.credential(currentUser.email, currentPassword); await currentUser.reauthenticateWithCredential(credential); await currentUser.updatePassword(newPassword); showToast("✅ Contraseña cambiada correctamente", "success"); document.getElementById('passwordForm').reset(); document.getElementById('passwordStrength').textContent = ''; document.getElementById('passwordMatch').textContent = ''; ['req-length', 'req-upper', 'req-lower', 'req-number', 'req-special'].forEach(id => { const el = document.getElementById(id); el.textContent = el.textContent.replace('✅', ''); el.classList.remove('valid'); el.classList.add('invalid'); }); } catch (error) { if (error.code === 'auth/wrong-password') showToast("La contraseña actual es incorrecta", "error"); else if (error.code === 'auth/weak-password') showToast("La contraseña es demasiado débil", "error"); else if (error.code === 'auth/requires-recent-login') showToast("Por seguridad, cierra sesión y vuelve a iniciar", "error"); else showToast("Error: " + error.message, "error"); } finally { btn.disabled = false; btn.innerHTML = '🔐 Cambiar Contraseña'; } }
@@ -807,7 +803,7 @@ function openFolder(folderId) { currentFolderId = folderId; currentPath = buildP
 function openNewFolderModal() { document.getElementById('folderNameInput').value = ''; document.getElementById('folderModal').classList.add('active'); setTimeout(() => document.getElementById('folderNameInput').focus(), 100); }
 function closeFolderModal() { document.getElementById('folderModal').classList.remove('active'); }
 async function createFolder() { const name = document.getElementById('folderNameInput').value.trim(); if (!name) { showToast("Escribe un nombre", "error"); return; } try { await db.collection('users').doc(currentUser.uid).collection('items').add({ type: 'folder', name: name, parentFolderId: currentFolderId, createdAt: firebase.firestore.FieldValue.serverTimestamp() }); closeFolderModal(); showToast(`📁 Carpeta "${name}" creada`, "success"); } catch (error) { showToast("Error al crear carpeta: " + error.message, "error"); } }
-async function deleteItem(itemId, type) { if (!confirm(`¿Seguro que quieres eliminar esta ${type}?`)) return; try { if (type === 'carpeta') { const children = await db.collection('users').doc(currentUser.uid).collection('items').where('parentFolderId', '==', itemId).get(); const batch = db.batch(); children.forEach(doc => batch.delete(doc.ref)); await batch.commit(); } await db.collection('users').doc(currentUser.uid).collection('items').doc(itemId).delete(); showToast(`${type === 'carpeta' ? '📁 Carpeta' : ' Archivo'} eliminado`, "success"); } catch (error) { showToast("Error al eliminar: " + error.message, "error"); } }
+async function deleteItem(itemId, type) { if (!confirm(`¿Seguro que quieres eliminar esta ${type}?`)) return; try { if (type === 'carpeta') { const children = await db.collection('users').doc(currentUser.uid).collection('items').where('parentFolderId', '==', itemId).get(); const batch = db.batch(); children.forEach(doc => batch.delete(doc.ref)); await batch.commit(); } await db.collection('users').doc(currentUser.uid).collection('items').doc(itemId).delete(); showToast(`${type === 'carpeta' ? ' Carpeta' : ' Archivo'} eliminado`, "success"); } catch (error) { showToast("Error al eliminar: " + error.message, "error"); } }
 
 async function handleFileUpload(input) {
   const file = input.files[0]; if (!file) return;
@@ -838,7 +834,7 @@ async function handleFileUpload(input) {
 function formatFileSize(bytes) { if (bytes < 1024) return bytes + ' B'; if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB'; return (bytes / (1024 * 1024)).toFixed(2) + ' MB'; }
 function getFileIcon(filename) {
   const ext = filename.split('.').pop().toLowerCase();
-  const icons = { 'jpg':'🖼️','jpeg':'🖼️','png':'🖼️','gif':'️','webp':'🖼️','svg':'🖼️','mp4':'🎬','mov':'🎬','avi':'🎬','mkv':'','webm':'','pdf':'📄','doc':'📝','docx':'📝','odt':'','xls':'📊','xlsx':'','csv':'📊','ods':'','ppt':'📽️','pptx':'📽️','zip':'🗜️','rar':'🗜️','7z':'️','tar':'🗜️','gz':'🗜️','mp3':'','wav':'🎵','ogg':'','flac':'🎵','txt':'📃','md':'📃','html':'🌐','css':'🎨','js':'⚙️','py':'🐍','java':'☕' };
+  const icons = { 'jpg':'🖼️','jpeg':'🖼️','png':'️','gif':'️','webp':'🖼️','svg':'🖼️','mp4':'🎬','mov':'🎬','avi':'🎬','mkv':'','webm':'','pdf':'📄','doc':'📝','docx':'📝','odt':'','xls':'📊','xlsx':'','csv':'📊','ods':'','ppt':'📽️','pptx':'📽️','zip':'🗜️','rar':'️','7z':'️','tar':'🗜️','gz':'🗜️','mp3':'','wav':'🎵','ogg':'','flac':'🎵','txt':'📃','md':'📃','html':'🌐','css':'🎨','js':'⚙️','py':'🐍','java':'☕' };
   return icons[ext] || '📄';
 }
 
@@ -1020,7 +1016,7 @@ async function sendAiUltimateMessage() {
       else { const errData = await response.json(); responseText = `(Error en OpenRouter: ${errData.error?.message || response.status}). \n\nSimulación de respuesta para: "${text}"`; aiTokensUsed += 20; } 
     } 
     let contentHtml = formatAiResponse(responseText); if (imageUrl) contentHtml += `<br><img src="${imageUrl}" class="ai-generated-image" alt="Generated Image" onclick="window.open(this.src)">`; 
-    contentHtml += `<div class="ai-msg-actions"><span class="ai-action-icon" onclick="copyToClipboard(this)" title="Copiar">📋</span></div>`; 
+    contentHtml += `<div class="ai-msg-actions"><span class="ai-action-icon" onclick="copyToClipboard(this)" title="Copiar"></span></div>`; 
     botMsgDiv.querySelector('.ai-msg-content').innerHTML = contentHtml; 
     chats[aiCurrentChatId].push({ role: 'assistant', content: responseText }); saveAiChats(chats); 
     document.getElementById('aiTokenCount').textContent = aiTokensUsed; 
@@ -1271,7 +1267,7 @@ function downloadConvertedFile(originalName, targetExt) {
   showToast("Archivo descargado (simulación)", "success");
 }
 
-// 6. EMULADOR ARCADE CON SISTEMA DE GUARDADO AUTOMÁTICO
+// 6. EMULADOR ARCADE CON SISTEMA DE GUARDADO AUTOMÁTICO (SOLO RETRO)
 let emulatorInstance = null;
 let currentRomUrl = '';
 
@@ -1333,10 +1329,6 @@ function getCoreFromExtension(ext) {
     'gba': 'gba', 'gb': 'gb', 'gbc': 'gb',
     'gen': 'segaMD', 'md': 'segaMD', 'bin': 'segaMD',
     'n64': 'n64', 'z64': 'n64',
-    'iso': 'psx', 'cue': 'psx',
-    'nds': 'nds',
-    'cso': 'psp', 'pbp': 'psp',
-    'wbfs': 'wii', 'rvz': 'wii',
     'zip': 'arcade',
     'a26': 'atari2600', 'a78': 'atari7800',
     'neo': 'neogeo'
@@ -1351,6 +1343,14 @@ function loadRom(input) {
   const ext = file.name.split('.').pop().toLowerCase();
   const selectedCore = document.getElementById('consoleSelect').value;
   let core = selectedCore === 'auto' ? getCoreFromExtension(ext) : selectedCore;
+  
+  // Validar que la extensión sea compatible con emulación web
+  const validExts = ['nes', 'sfc', 'smc', 'gba', 'gb', 'gbc', 'gen', 'md', 'bin', 'n64', 'z64', 'zip', 'a26', 'a78', 'neo'];
+  if (!validExts.includes(ext)) {
+    showToast(`⚠️ Formato .${ext} no soportado. Usa solo ROMs retro (NES, SNES, GBA, Genesis, N64, Arcade).`, "error");
+    input.value = '';
+    return;
+  }
   
   // Crear URL temporal para el archivo local
   const romUrl = URL.createObjectURL(file);
@@ -1436,7 +1436,7 @@ function checkAndLoadSaveState() {
 
 function manualSaveState() {
   if (!currentRomName) {
-    showToast("Primero carga un juego", "error");
+    showToast("Primero carga un juego retro", "error");
     return;
   }
   saveGameState(currentRomName);
@@ -1444,7 +1444,7 @@ function manualSaveState() {
 
 function manualLoadState() {
   if (!currentRomName) {
-    showToast("Primero carga un juego", "error");
+    showToast("Primero carga un juego retro", "error");
     return;
   }
   if (!loadGameState(currentRomName)) {
@@ -1454,7 +1454,7 @@ function manualLoadState() {
 
 function deleteSaveState() {
   if (!currentRomName) {
-    showToast("Primero carga un juego", "error");
+    showToast("Primero carga un juego retro", "error");
     return;
   }
   if (confirm(`¿Borrar permanentemente la partida guardada de "${currentRomName}"?`)) {
